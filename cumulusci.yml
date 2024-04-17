@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.86.0'
+project:
+    name: RF-New
+    package:
+        name: RF-New
+        api_version: '61.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/RF-New/tests
+            options:
+                outputdir: robot/RF-New/results
+
+    robot_testdoc:
+        options:
+            path: robot/RF-New/tests
+            output: robot/RF-New/doc/RF-New_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
